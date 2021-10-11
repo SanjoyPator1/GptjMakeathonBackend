@@ -33,6 +33,12 @@ def fun():
     res = LanguageModel.pickup_line_gen()
     return res
 
+
+@app.route('/seg', methods=['POST'])
+def fun1():
+    res = request.json['name']
+    return res
+
 # input_text = "Lauren 36, Visual artist and freelance costume/set designer. Former international ballroom dancer"
 # ans = pickup_line_gen(input_text)
 # print("ans: ", ans)
