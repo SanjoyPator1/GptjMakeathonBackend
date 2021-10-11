@@ -1,6 +1,7 @@
 import json
 from flask import request
 from GPTJ.gptj_api import Completion
+import random
 
 
 class LanguageModel:
@@ -40,3 +41,22 @@ class LanguageModel:
         json_obj = json.dumps(res)
 
         return json_obj
+
+    @classmethod
+    def automated_pickup(cls):
+        lines = open("result.json")
+        lines = json.load(lines)
+
+        keyword = request.json['keyword']
+
+        print(type(keyword))
+        print(keyword)
+
+        # return keyword
+
+        if keyword in lines.keys():
+            res = {"res ": random.choice(lines[keyword])}
+            return json.dumps(res)
+        else:
+            res = {"res ": random.choice(lines['general'])}
+            return json.dumps(res)

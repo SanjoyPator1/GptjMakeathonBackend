@@ -34,12 +34,16 @@ def fun():
     return res
 
 
+@app.route('/keyword', methods=['POST'])
+def funkey():
+    res = LanguageModel.automated_pickup()
+    return res
+
+
 @app.route('/seg', methods=['POST'])
 def fun1():
-    res = request.json['name']
-    data = {"key": res}
-    data1 = json.dumps(data)
-    return data1
+    res = LanguageModel.automated_pickup()
+    return res
 
 # input_text = "Lauren 36, Visual artist and freelance costume/set designer. Former international ballroom dancer"
 # ans = pickup_line_gen(input_text)
