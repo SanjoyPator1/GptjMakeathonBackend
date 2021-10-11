@@ -9,7 +9,7 @@ class LanguageModel:
         pass
 
     @classmethod
-    def pickup_line_gen(cls, context="Pickup line for tinder profiles",
+    def pickup_line_gen(cls, context="This is a bot that will create love letters",
                         examples={"Lauren 36, Visual artist and freelance costume/set designer. Former international ballroom dancer": "Hey are you an artist? Because you sure do draw my attention)",
                                   "Leanne 28, Reader, writer, maker, and educator": "Babe, if you were words on a page, you'd be what they call fine print.",
                                   "Tess 23, Cat Enthusiast. Human, mostly.": "If I were a cat, I'd spend all nine lives with you."}):
@@ -21,9 +21,9 @@ class LanguageModel:
         User = "Girl"
         Bot = "Guy"
 
-        max_tokens = 20
+        max_tokens = 25
 
-        temperature = 0.4
+        temperature = 0.2
 
         top_probability = 1.0
 
