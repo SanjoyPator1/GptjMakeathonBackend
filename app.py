@@ -37,7 +37,9 @@ def fun():
 @app.route('/seg', methods=['POST'])
 def fun1():
     res = request.json['name']
-    return res
+    data = {"key": res}
+    data1 = json.dumps(data)
+    return data1
 
 # input_text = "Lauren 36, Visual artist and freelance costume/set designer. Former international ballroom dancer"
 # ans = pickup_line_gen(input_text)
